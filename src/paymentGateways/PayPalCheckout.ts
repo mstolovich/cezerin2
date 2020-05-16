@@ -7,6 +7,7 @@ const SANDBOX_URL = "www.sandbox.paypal.com"
 const REGULAR_URL = "www.paypal.com"
 
 const verify = (params, settings) =>
+  debugger;
   new Promise((resolve, reject) => {
     if (!settings) {
       settings = {
