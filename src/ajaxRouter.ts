@@ -53,6 +53,7 @@ const getIP = req => {
 const getUserAgent = req => req.get("user-agent")
 
 const fillCartItemWithProductData = (products, cartItem) => {
+  
   const product = products.find(p => p.id === cartItem.product_id)
   if (product) {
     cartItem.image_url =

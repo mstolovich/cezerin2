@@ -4,6 +4,7 @@ import SettingsService from "../services/settings/settings"
 import LiqPay from "./LiqPay"
 import PayPalCheckout from "./PayPalCheckout"
 import StripeElements from "./StripeElements"
+import Fondy from "./Fondy"
 
 const getOptions = orderId =>
   Promise.all([
@@ -28,10 +29,13 @@ const getOptions = orderId =>
   })
 
 const getPaymentFormSettings = orderId =>
-  getOptions(orderId).then(options => {
+  getOptions(orderId)
+  .then(options => {
     switch (options.gateway) {
       case "paypal-checkout":
         return PayPalCheckout.getPaymentFormSettings(options)
+      case "fondy":
+        return Fondy.getPaymentFormSettings(options)
       case "liqpay":
         return LiqPay.getPaymentFormSettings(options)
       case "stripe-elements":

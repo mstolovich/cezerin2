@@ -9,9 +9,9 @@
     "target": "es2017",
     "esModuleInterop": true,
     "noEmitOnError": false,
-    "removeComments": true
+    "removeComments": true,
     // // Older
-    //  "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     // "allowJs": true,
     //   "skipLibCheck": true,
     // "esModuleInterop": true,
